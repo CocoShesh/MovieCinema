@@ -13,4 +13,4 @@ Currently, two official plugins are available:
 <img src="/public/Preview/Schedule-Section.png" alt="Schedule" />
 <img src="/public/Preview/ComingSoon-Section.png" alt="ComingSoon" />
 <img src="/public/Preview/Blog-Section.png" alt="Blog" />
-<img src="/public/Preview/Footer.png" alt="Footer" />
+<img src="/public/Preview/Footer-Section.png" alt="Footer" />
