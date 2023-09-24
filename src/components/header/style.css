@@ -1,0 +1,116 @@
+.ant-modal {
+  top: 50px;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper {
+  width: 240px;
+  height: 320px;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.swiper {
+  width: 130px !important;
+  height: 200px !important;
+}
+.swiper-slide:nth-child(1n) {
+  background-color: rgb(206, 17, 17);
+}
+
+.swiper-slide:nth-child(2n) {
+  background-color: rgb(0, 140, 255);
+}
+
+.swiper-slide:nth-child(3n) {
+  background-color: rgb(10, 184, 111);
+}
+
+.swiper-slide:nth-child(4n) {
+  background-color: rgb(211, 122, 7);
+}
+
+.swiper-slide:nth-child(5n) {
+  background-color: rgb(118, 163, 12);
+}
+
+.swiper-slide:nth-child(6n) {
+  background-color: rgb(180, 10, 47);
+}
+
+.swiper-slide:nth-child(7n) {
+  background-color: rgb(35, 99, 19);
+}
+
+.swiper-slide:nth-child(8n) {
+  background-color: rgb(0, 68, 255);
+}
+
+.swiper-slide:nth-child(9n) {
+  background-color: rgb(218, 12, 218);
+}
+
+.swiper-slide:nth-child(10n) {
+  background-color: rgb(54, 94, 77);
+}
+
+.custom-shadow {
+  box-shadow: 4px 5px 28px -6px rgb(255, 255, 255);
+}
+
+.bg-shadow {
+  box-shadow: 4px 2px 18px -6px rgb(255, 255, 255);
+}
+
+.typing {
+  overflow: hidden;
+  animation: typing 3s steps(40, end) infinite;
+  white-space: nowrap;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 130px; /* Adjust the width to your desired text length */
+  }
+}
+
+@keyframes zoom-in {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.custom-animation {
+  animation: zoom-in 0.5s ease-in-out;
+}
+
+@media screen and (min-width: 350px) and (max-width: 768px) {
+  .swiper {
+    width: 100px !important;
+  }
+}
+
+.ant-drawer-wrapper-body {
+  background: #000;
+}

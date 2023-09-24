@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Racing+Sans+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  font-family: "Racing Sans One", cursive;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 25px;
+}
+
+.bg {
+  position: absolute;
+  width: 100%;
+
+  background: #000;
+  left: 0;
+  top: 0;
+  opacity: 0.5;
+}
+.date h1 {
+  text-transform: uppercase;
+
+  font-family: "Roboto Slab", serif;
+  font-weight: 900;
+
+  margin-bottom: 20px;
+  background: linear-gradient(transparent 100%, #000 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: rgba(255, 255, 255, 0.452); /* Set your desired text color here */
+  text-shadow: none; /* Remove text-shadow */
+}
+
+.date.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.trailer {
+  font-family: "Roboto Slab", serif;
+  font-weight: 900;
+  font-size: 20px;
+  background: linear-gradient(transparent 100%, #000 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-transform: uppercase;
+  color: orange; /* Set your desired text color here */
+  text-shadow: none; /* Remove text-shadow */
+}
+
+.custom-shadow {
+  box-shadow: 4px 5px 28px -6px rgb(255, 255, 255);
+}
+
+.effect {
+  animation: beat 1s infinite;
+}
+.line {
+  animation: lining 2s ease-in-out infinite;
+}
+
+.animation:hover {
+  animation: Add 1s ease-in-out;
+  cursor: pointer;
+}
+.ant-float-btn-body {
+  background: #000 !important;
+  box-shadow: 1px -1px 5px 1px rgb(255, 255, 255);
+}
+
+.ant-float-btn-icon {
+  color: white !important;
+}
+.ant-btn-yes span:hover {
+  background: blue;
+  color: white;
+  padding: 0.2rem;
+  border-radius: 5px;
+}
+
+.ant-tooltip-inner {
+  background: white !important;
+  color: #000 !important;
+  font-weight: bold;
+  border-radius: 5px !important;
+}
+
+.ant-modal-close {
+  color: white !important;
+  background: #000 !important;
+  border: 1px solid white !important;
+}
+.ant-modal-content {
+  background: #000 !important;
+  box-shadow: 4px 5px 28px -6px rgb(255, 255, 255) !important;
+  height: 500px !important;
+}
+
+.shadowerist {
+  box-shadow: 1px -1px 5px 1px rgb(255, 255, 255);
+}
+
+@keyframes beat {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes lining {
+  from {
+    width: 0;
+  }
+  to {
+    width: 170px;
+  }
+}
+.custom-shadow {
+  box-shadow: 1px -1px 5px 1px rgb(255, 255, 255);
+}
+
+@keyframes Add {
+  from {
+    background: transparent;
+  }
+  to {
+    width: orange;
+  }
+}
