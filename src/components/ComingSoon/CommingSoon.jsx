@@ -19,7 +19,7 @@ const CommingSoon = () => {
   return (
     <>
       <section
-        className="bg-black py-10 px-10 text-white h-full "
+        className="bg-black py-10 max-lg:px-10  px-10 max-sm:px-5  text-white h-full "
         id="coming-soon"
       >
         <h1 className="uppercase mb-5 text-xl"> Coming Soon</h1>
@@ -28,7 +28,11 @@ const CommingSoon = () => {
         <section className="grid grid-cols-6 mt-10 gap-x-4 max-md:grid-cols-2 max-md:gap-y-5 max-lg:grid-cols-3 max-lg:gap-y-5">
           {displayedPage.map(item => {
             return (
-              <div data-aos="zoom-in" key={item.id} className="custom-shadow">
+              <div
+                data-aos="zoom-in"
+                key={item.id}
+                className="border-2 rounded-md"
+              >
                 <img
                   src={item.previewImg}
                   className="w-[200px] max-md:w-auto max-lg:w-auto "
