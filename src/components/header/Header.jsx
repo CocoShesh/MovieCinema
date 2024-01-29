@@ -183,63 +183,77 @@ const Header = () => {
         <section className="flex items-center justify-center sticky pt-20 custom-animation max-lg:flex-col max-lg:w-auto  ">
           {selectedItem && (
             <>
-              <section className=" flex flex-col m-auto pl-20 w-[600px] text-white  max-md:pl-10 max-md:pr-10  max-md:h-auto max-md:pb-10 max-md:w-auto ">
-                <img
-                  src={titleImg ? titleImg : selectedItem.titleImg}
-                  className=" w-2/5 object-contain"
-                  alt=""
-                />
-                <section className="flex gap-5  text-slate-400 text-[20px] mb-5 mt-2">
-                  <p className=" border-r-[1px] border-slate-500 pr-5">
-                    {year ? year : selectedItem.year}
-                  </p>
-                  <p className=" border-r-[1px] border-slate-500 pr-5  pl-2 bg-orange-500 text-white ">
-                    {ageLimit ? ageLimit : selectedItem.ageLimit}
-                  </p>
-                  <p className=" border-r-[1px] border-slate-500 pr-5">
-                    {length ? length : selectedItem.length}
-                  </p>
-                  <p className=" border-r-[1px] border-slate-500 pr-5">
-                    {selectedItem.category}
-                  </p>
-                </section>
-                <p className="text-sm ">
-                  {description ? description : selectedItem.description}
-                </p>
-                <section className="flex gap-5 mt-5">
-                  <button className=" flex items-center gap-2 bg-white rounded-md text-red-500 uppercase font-bold w-[120px] h-[30px] justify-center">
-                    <BsBookmark />
-                    Book
-                  </button>
-                  <button
-                    onClick={() => addList(items.id)}
-                    className=" flex items-center gap-2 bg-red-700 rounded-md  text-white uppercase font-bold w-[120px] h-[30px] justify-center"
-                  >
-                    <AiOutlinePlus /> My List
-                  </button>
-                </section>
-              </section>
-              <section className=" flex flex-col text-white date active max-md:left-0">
-                <div>
-                  <h1 className="text-8xl break-words  text-center max-md:w-auto max-md:text-5xl">
-                    On {date ? date : selectedItem.date}
-                  </h1>
-                </div>
-                <div className="flex items-center justify-center gap-5 mt-5">
-                  <span className="flex items-center justify-center  ">
-                    <div className="  w-[80px] h-[80px] rounded-full bg-transparent effect   custom-shadow   border-[1px] ">
-                      <BsFillPlayCircleFill
-                        className=" fill-red-700 text-[65px] m-2  cursor-pointer hover:scale-90 hover:brightness-90 "
-                        onClick={showModal}
-                      />
+              <div className="hero  ">
+                <div className="hero-content  flex-col lg:flex-row p-0 ">
+                  <div className="text-center lg:text-left max-sm:max-w-xs sm:max-w-lg   md:max-w-2xl lg:pl-20">
+                    <img
+                      src={titleImg ? titleImg : selectedItem.titleImg}
+                      className="max-sm:max-w-xs  max-w-sm"
+                    />
+
+                    <div className="stats lg:stats-horizontal   bg-transparent max-w-xs">
+                      <div className="stat  ">
+                        <div className="stat-title text-white">
+                          {year ? year : selectedItem.year}
+                        </div>
+                      </div>
+                      <div className="stat">
+                        <div className="stat-title  text-white">
+                          {ageLimit ? ageLimit : selectedItem.ageLimit}
+                        </div>
+                      </div>
+                      <div className="stat">
+                        <div className="stat-title  text-white">
+                          {length ? length : selectedItem.length}
+                        </div>
+                      </div>
+                      <div className="stat">
+                        <div className="stat-title  text-white">
+                          {selectedItem.category}
+                        </div>
+                      </div>
                     </div>
-                    <section className="flex flex-col ml-10">
-                      <p className=" trailer "> Watch Trailer</p>
-                      <hr className="w-[170px]    line" />
+                    <p className="text-sm max-sm:text-justify  ">
+                      {description ? description : selectedItem.description}
+                    </p>
+                    <section className="flex gap-5 mt-5">
+                      <button className=" flex items-center gap-2 bg-white rounded-md text-red-500 uppercase font-bold max-sm:w-full max-md:w-full max-lg:w-48 w-48 h-[30px] justify-center">
+                        <BsBookmark />
+                        Book
+                      </button>
+                      <button
+                        onClick={() => addList(items.id)}
+                        className=" flex items-center gap-2 bg-red-700 rounded-md  text-white uppercase font-bold max-md:w-full  max-sm:w-full max-lg:w-48 h-[30px]  w-48  justify-center"
+                      >
+                        <AiOutlinePlus /> My List
+                      </button>
                     </section>
-                  </span>
+                  </div>
+                  <div>
+                    <section className=" flex flex-col text-white date active max-md:left-0">
+                      <div>
+                        <h1 className="xl:text-8xl max-lg:text-6xl  md:text-7xl  max-sm:text-5xl break-words  text-center max-md:w-auto ">
+                          On {date ? date : selectedItem.date}
+                        </h1>
+                      </div>
+                      <div className="flex items-center justify-center gap-5 mt-5">
+                        <span className="flex items-center justify-center  ">
+                          <div className="  w-[80px] h-[80px] rounded-full bg-transparent effect   custom-shadow   border-[1px] ">
+                            <BsFillPlayCircleFill
+                              className=" fill-red-700 text-[65px] m-2  cursor-pointer hover:scale-90 hover:brightness-90 "
+                              onClick={showModal}
+                            />
+                          </div>
+                          <section className="flex flex-col ml-10">
+                            <p className=" trailer "> Watch Trailer</p>
+                            <hr className="w-[170px]    line" />
+                          </section>
+                        </span>
+                      </div>
+                    </section>
+                  </div>
                 </div>
-              </section>
+              </div>
             </>
           )}
         </section>
