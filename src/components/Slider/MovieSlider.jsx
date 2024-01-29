@@ -65,12 +65,12 @@ const MovieSlider = ({
 
   return (
     <>
-      <section className="flex w-[800px] items-center justify-center custom-shadow mx-auto mb-5 p-10 rounded-[20px] h-[250px] pt-10 max-md:w-auto max-md:gap-10 max-md:h-auto max-md:m-auto">
+      <section className="flex w-[800px] max-sm:max-w-[380px] max-sm:gap-5  items-center justify-center custom-shadow mx-auto mb-5 p-10 rounded-[20px] h-[250px] pt-10 max-md:w-auto max-md:gap-10 max-md:h-auto max-md:m-auto">
         <Swiper
           effect={"cards"}
           grabCursor={true}
           modules={[EffectCards, Autoplay]}
-          className="mySwiper shadow-lg"
+          className="mySwiper shadow-lg  "
           autoplay={{
             delay: 5000,
             disableOnInteraction: false,
@@ -78,10 +78,13 @@ const MovieSlider = ({
           speed={900}
         >
           {Slice1.map(item => (
-            <SwiperSlide key={item.id} className="h-[200px] max-md:h-[150px]">
+            <SwiperSlide
+              key={item.id}
+              className="h-[200px]  max-md:h-[150px]  "
+            >
               <img
                 src={item.previewImg}
-                className="h-[200px] max-md:h-[150px]"
+                className="h-[200px] max-md:h-[150px] "
                 alt=""
                 onClick={event => handleClickFirst(event, item)}
               />
@@ -116,7 +119,7 @@ const MovieSlider = ({
           effect={"cards"}
           grabCursor={true}
           modules={[EffectCards, Autoplay]}
-          className="mySwiper shadow-lg"
+          className="mySwiper shadow-lg "
           autoplay={{
             delay: 5000,
             disableOnInteraction: false,
