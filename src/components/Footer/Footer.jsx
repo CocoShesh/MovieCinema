@@ -37,7 +37,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <section className="flex gap-10  max-md:grid max-md:grid-cols-2 max-md:mx-auto ">
+        <section className="flex gap-10  max-md:grid max-md:grid-cols-2 max-md:px-5 ">
           <div>
             <p className="font-bold uppercase  mb-2"> Useful Links</p>
             <ul className="text-sm leading-7 ">
