@@ -213,7 +213,7 @@ const Header = () => {
                         </div>
                       </div>
                     </div>
-                    <p className="text-sm max-sm:text-justify  ">
+                    <p className="text-sm max-sm:text-justify text-white  ">
                       {description ? description : selectedItem.description}
                     </p>
                     <section className="flex gap-5 mt-5">
