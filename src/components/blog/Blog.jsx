@@ -15,17 +15,17 @@ const Blog = () => {
         <h1 className="uppercase mb-5 text-xl">Our Blog</h1>
         <hr className="w-[600px] h-[3px] border-none bg-gradient-to-r from-red-500 to-black" />
 
-        <section className="grid grid-cols-4 gap-5 mt-10 max-md:grid-cols-1 max-md:gap-y-10 max-md:w-full max-lg:grid-cols-2 max-lg:gap-5">
+        <section className="grid grid-cols-4 gap-10 mt-10 max-md:grid-cols-1 max-md:gap-y-10 max-md:w-full max-lg:grid-cols-2 max-lg:gap-10">
           {blog.map(item => {
             return (
               <div
                 data-aos="zoom-in"
                 key={item.id}
-                className="  border-2 rounded-md hover:brightness-90 cursor-pointer  "
+                className="  bg-shadow hover:brightness-90 cursor-pointer "
               >
                 <img
                   src={item.thumbnail}
-                  className="w-[300px] max-md:w-auto max-lg:w-auto "
+                  className=" max-md:w-auto max-lg:w-auto "
                   alt=""
                 />
                 <div className="pl-5 pb-5 pt-2">
