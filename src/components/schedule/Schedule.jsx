@@ -50,20 +50,20 @@ const Schedule = () => {
   return (
     <>
       <section
-        className="bg-[#000000] h-auto text-white pt-20  pb-10 max-lg:px-10  px-10 max-sm:px-5 max-md:pt-44  "
+        className="bg-[#000000] h-auto text-white pt-20  pb-10 px-10 max-md:pt-44 "
         id="Schedule"
       >
         {contextHolder}
         <h1 className="uppercase mb-5 text-xl"> Opening This Week</h1>
         <hr className="w-[600px] h-[3px] border-none bg-gradient-to-r from-red-500 to-black" />
 
-        <section className="flex  pt-8  gap-5   max-sm:grid max-sm:grid-cols-4 ">
+        <section className="flex gap-5 pt-8 ">
           {category.map((item, index) => {
             return (
               <button
                 key={index}
                 onClick={() => handleCategoryItem(item)}
-                className={` w-[80px] h-[50px]     rounded-md uppercase text-xs bg-[#121212] mb-2  text-center hover:bg-orange-500 hover:text-white transition duration-500 ease-in-out ${
+                className={`w-[80px] h-[30px] m rounded-md uppercase text-xs bg-[#121212] mb-2  text-center hover:bg-orange-500 hover:text-white transition duration-500 ease-in-out max-sm:w-auto ${
                   isClick === item ? "bg-orange-500 text-white" : ""
                 }`}
               >
@@ -72,13 +72,13 @@ const Schedule = () => {
             );
           })}
         </section>
-        <section className="grid grid-cols-6 mt-5 gap-y-5 gap-x-5 max-sm:grid-cols-2 max-lg:grid-cols-4">
+        <section className="grid grid-cols-6 mt-5 gap-y-5 gap-x-5 max-sm:grid-cols-3 max-lg:grid-cols-4">
           {filteredItem.map(item => {
             return (
               <div
                 data-aos="zoom-in"
                 key={item.id}
-                className="w-auto h-auto border-2 rounded-md bg-[#121212] relative overflow-hidden"
+                className="w-auto h-auto custom-shadow bg-[#121212] relative overflow-hidden"
                 style={{
                   transformOrigin: "center",
                   transition: "transform 0.3s ease-in-out",
@@ -117,7 +117,14 @@ const Schedule = () => {
                     </a>
                   </div>
                 </div>
-                <img src={item.previewImg} className="w-[250px]" alt="" />
+                <img
+                  src={item.previewImg}
+                  className=""
+                  alt="movie-image"
+                  onError={e => {
+                    e.currentTarget.src = "/error-image.png";
+                  }}
+                />
                 <p className="text-center my-2 text-sm text-slate-200">
                   {item.length}{" "}
                   <span className="border-l-[1px] border-slate-500 pl-2">
