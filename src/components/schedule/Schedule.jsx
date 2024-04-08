@@ -6,6 +6,9 @@ import Data from "../../../public/data/movieData";
 import { message } from "antd";
 import "../../index.css";
 import { BsPlusLg, BsFillPlayFill } from "react-icons/bs";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
+import { LazyLoadImage } from "react-lazy-load-image-component";
 const category = [
   "All",
   "Romance",
@@ -55,7 +58,7 @@ const Schedule = () => {
       >
         {contextHolder}
         <h1 className="uppercase mb-5 text-xl"> Opening This Week</h1>
-        <hr className="w-[600px] h-[3px] border-none bg-gradient-to-r from-red-500 to-black" />
+        <hr className="lg:w-[600px] h-[3px] border-none bg-gradient-to-r from-red-500 to-black" />
 
         <section className="flex gap-5 pt-8 ">
           {category.map((item, index) => {
@@ -72,7 +75,7 @@ const Schedule = () => {
             );
           })}
         </section>
-        <section className="grid grid-cols-6 mt-5 gap-y-5 gap-x-5 max-sm:grid-cols-3 max-lg:grid-cols-4">
+        <section className="grid lg:grid-cols-4 mt-5 gap-y-5 gap-x-5 sm:grid-cols-2 md:grid-cols-3  xl:grid-cols-5 2xl:grid-cols-8">
           {filteredItem.map(item => {
             return (
               <div
@@ -117,10 +120,14 @@ const Schedule = () => {
                     </a>
                   </div>
                 </div>
-                <img
-                  src={item.previewImg}
-                  className=""
+                <LazyLoadImage
                   alt="movie-image"
+                  src={item.previewImg}
+                  height={300}
+                  effect="blur"
+                  wrapperProps={{
+                    style: { transitionDelay: "1s" },
+                  }}
                   onError={e => {
                     e.currentTarget.src = "/error-image.png";
                   }}

@@ -6,7 +6,9 @@ import Data from "../../../public/data/movieData";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import "../header/style.css";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
 const MovieSlider = ({
   onImageClickFirst,
   onImageClickSecond,
@@ -82,7 +84,12 @@ const MovieSlider = ({
               key={item.id}
               className="h-[200px]  max-md:h-[150px]  "
             >
-              <img
+              <LazyLoadImage
+                height={300}
+                effect="blur"
+                wrapperProps={{
+                  style: { transitionDelay: "1s" },
+                }}
                 src={item.previewImg}
                 className="h-[200px] max-md:h-[150px] "
                 alt=""
@@ -105,7 +112,12 @@ const MovieSlider = ({
         >
           {Slice2.map(item => (
             <SwiperSlide key={item.id} className="h-[200px]  max-md:h-[150px]">
-              <img
+              <LazyLoadImage
+                height={300}
+                effect="blur"
+                wrapperProps={{
+                  style: { transitionDelay: "1s" },
+                }}
                 src={item.previewImg}
                 className="h-[200px]  max-md:h-[150px]"
                 alt=""
@@ -128,7 +140,12 @@ const MovieSlider = ({
         >
           {Slice3.map(item => (
             <SwiperSlide key={item.id} className="h-[200px]  max-md:h-[150px]">
-              <img
+              <LazyLoadImage
+                height={300}
+                effect="blur"
+                wrapperProps={{
+                  style: { transitionDelay: "1s" },
+                }}
                 src={item.previewImg}
                 className="h-[200px]  max-md:h-[150px]"
                 alt=""

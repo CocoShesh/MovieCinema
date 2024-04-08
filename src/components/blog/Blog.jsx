@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import blog from "../../../public/data/blogData";
 import "../header/style.css";
 import Aos from "aos";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 const Blog = () => {
   useEffect(() => {
     Aos.init();
@@ -13,7 +15,7 @@ const Blog = () => {
         id="blog"
       >
         <h1 className="uppercase mb-5 text-xl">Our Blog</h1>
-        <hr className="w-[600px] h-[3px] border-none bg-gradient-to-r from-red-500 to-black" />
+        <hr className="lg:w-[600px] h-[3px] border-none bg-gradient-to-r from-red-500 to-black" />
 
         <section className="grid grid-cols-4 gap-10 mt-10 max-md:grid-cols-1 max-md:gap-y-10 max-md:w-full max-lg:grid-cols-2 max-lg:gap-10">
           {blog.map(item => {
@@ -23,7 +25,12 @@ const Blog = () => {
                 key={item.id}
                 className="  bg-shadow hover:brightness-90 cursor-pointer "
               >
-                <img
+                <LazyLoadImage
+                  height={300}
+                  effect="blur"
+                  wrapperProps={{
+                    style: { transitionDelay: "1s" },
+                  }}
                   src={item.thumbnail}
                   className=" max-md:w-auto max-lg:w-auto "
                   alt=""

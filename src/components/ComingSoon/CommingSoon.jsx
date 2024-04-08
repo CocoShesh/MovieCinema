@@ -3,7 +3,8 @@ import Data from "../../../public/data/movieData";
 import "../../index.css";
 import { AiTwotoneCalendar } from "react-icons/ai";
 import Aos from "aos";
-
+import "react-lazy-load-image-component/src/effects/blur.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 const CommingSoon = () => {
   const [page, setPage] = useState(1);
   const perPage = 6;
@@ -23,13 +24,22 @@ const CommingSoon = () => {
         id="coming-soon"
       >
         <h1 className="uppercase mb-5 text-xl"> Coming Soon</h1>
-        <hr className="w-[600px] h-[3px] border-none bg-gradient-to-r from-red-500 to-black custom-animation" />
+        <hr className="lg:w-[600px] h-[3px] border-none bg-gradient-to-r from-red-500 to-black custom-animation" />
 
         <section className="grid grid-cols-6 mt-10 gap-x-4 max-md:grid-cols-2 max-md:gap-y-5 max-lg:grid-cols-3 max-lg:gap-y-5">
           {displayedPage.map(item => {
             return (
               <div data-aos="zoom-in" key={item.id} className="custom-shadow">
-                <img src={item.previewImg} className=" " alt="" />
+                <LazyLoadImage
+                  height={300}
+                  effect="blur"
+                  wrapperProps={{
+                    style: { transitionDelay: "1s" },
+                  }}
+                  src={item.previewImg}
+                  className=" "
+                  alt=""
+                />
                 <div className="flex items-center justify-center gap-3 py-2 bg-orange-600 uppercase text-sm animation">
                   <p> Add To Calendar</p>
                   <AiTwotoneCalendar className=" text-lg" />
